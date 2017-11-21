@@ -1,5 +1,5 @@
 require 'rspec'
-require '../lib/bitmap.rb'
+require_relative '../lib/bitmap.rb'
 
 describe Bitmap do
   before(:each) do
@@ -8,8 +8,8 @@ describe Bitmap do
 
   describe 'command I' do
     it 'takes two arguments to mulitply and create a matrix with elements "O"' do
-      two_by_two = [["O","O"]["O","O"]]
-      expect (@bitmap.i(2,2)).to eq(two_by_two)
+      three_by_two = [["O","O","O"],["O","O","O"]]
+      expect(@bitmap.i(3,2)).to eq(three_by_two)
     end
   end
 end
