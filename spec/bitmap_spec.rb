@@ -17,7 +17,7 @@ describe Bitmap do
 
   describe 'command C' do
     it 'clears the matrix, changing all elements to "O" ' do
-      three_by_two =
+      three_by_two = [["O","O","O"],["O","O","O"]]
       @bitmap.matrix = [["C","C","C"],["C","C","C"]]
       @bitmap.c
       expect(@bitmap.matrix).to eq(three_by_two)
@@ -29,6 +29,13 @@ describe Bitmap do
       color_three_by_two = [["C","O","O"],["O","O","O"]]
       @bitmap.l(1,1,"C")
       expect(@bitmap.matrix).to eq(color_three_by_two)
+    end
+  end
+
+  describe 'command S' do
+    it 'returns the matrix in its current form' do
+      @bitmap.matrix = [["C","C","C"],["C","C","C"]]
+      expect{@bitmap.s}.to output("CCC\n" + "CCC\n").to_stdout
     end
   end
 end

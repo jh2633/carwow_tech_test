@@ -16,4 +16,9 @@ attr_accessor :matrix
       y -= 1
       @matrix[x][y] = c
     end
+
+    def s
+      @matrix.map! {|x| x.join("")}
+      puts @matrix
+    end
 end
